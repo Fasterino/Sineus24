@@ -1,0 +1,44 @@
+:root {
+    --theme: 1;
+    --debug-color: #073;
+    --fg: #333;
+    --bg: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme: 0;
+        --debug-color: #3fa;
+        --fg: #fff;
+        --bg: #333;
+    }
+}
+
+:root,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas {
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    /* max-width: 100%; */
+    height: 100%;
+}
+
+@media (max-aspect-ratio: 6/9) {
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
