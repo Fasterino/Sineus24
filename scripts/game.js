@@ -1176,7 +1176,8 @@ async function setUpGame() {
                 this.locals.lastSelect = -1;
 
                 this.locals.show = () => {
-                    this.locals.pos = this.locals.lastSelect = (engine.mouse.x < engine.width / 2) ? 0 : 1;
+                    if (!engine.mouse.isTouch)
+                        this.locals.pos = this.locals.lastSelect = (engine.mouse.x < engine.width / 2) ? 0 : 1;
                     this.locals.active = true;
                     this.locals.canTap = false;
                     engine.coroutine(500, t =>
